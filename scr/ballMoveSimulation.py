@@ -48,6 +48,10 @@ class BallMoveSimulation:
             self.simulation_window.fill((225, 225, 225))
             self.ball.update()
 
+            if self.ball.y + self.ball.radius > self.WINDOW_HEIGHT - self.escape_height:
+                if abs(self.ball.vy) < 0.1 and self.ball.vy <= 0:
+                    pygame.quit()
+                    sys.exit()
 
             self.ball.draw()
             pygame.display.update()
