@@ -47,13 +47,13 @@ class BallMoveSimulation:
             self.simulation_window.fill((225, 225, 225))
             self.ball.update()
 
-            check_exit_condition()
+            self.check_exit_condition()
 
             self.ball.draw()
             pygame.display.update()
             self.clock.tick(self.clock_tick)
-            
-    def check_exit_condition():
+
+    def check_exit_condition(self):
         if self.ball.y + self.ball.radius > self.WINDOW_HEIGHT - self.escape_height:
                 if abs(self.ball.vy) < 0.1 and self.ball.vy <= 0:
                     pygame.quit()
