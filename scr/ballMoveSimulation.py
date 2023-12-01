@@ -5,7 +5,7 @@ class BallMoveSimulation:
     def __init__(self, WINDOW_WIDTH=900, WINDOW_HEIGHT=600,
                 ball_x=450, ball_y=20, BALL_RADIUS=20,
                 BALL_COLOR=(25, 25, 105),
-                ball_vx=0.0, ball_vy=0.0, ball_ax=0.0, ball_ay=9.8, k=0.6,
+                ball_vx=0.0, ball_vy=0.0, ball_ax=0.0, ball_ay=9.8, k=1.0,
                 clock_tick=120, escape_height=10.0):
         self.WINDOW_WIDTH = WINDOW_WIDTH
         self.WINDOW_HEIGHT = WINDOW_HEIGHT
@@ -32,14 +32,13 @@ class BallMoveSimulation:
 
         self.ball = Ball(self.ball_x, self.ball_y, self.BALL_RADIUS, self.BALL_COLOR, self.ball_vx, self.ball_vy,
                         self.ball_ax, self.ball_ay, self.simulation_window, self.k)
-        
     def start_simulation(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            
+
             keys = pygame.key.get_pressed()
             if keys[pygame.K_ESCAPE]:
                 pygame.quit()
