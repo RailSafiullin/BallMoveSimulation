@@ -5,7 +5,7 @@ class BallMoveSimulation:
     def __init__(self, WINDOW_WIDTH=900, WINDOW_HEIGHT=600,
                 ball_x=450, ball_y=20, BALL_RADIUS=20,
                 BALL_COLOR=(25, 25, 105),
-                ball_vx=0.0, ball_vy=0.0, ball_ax=0.0, ball_ay=9.8, k=1.0,
+                ball_vx=0.0, ball_vy=0.0, ball_ax=0.0, ball_ay=9.8, k=0.6,
                 clock_tick=120, escape_height=10.0):
         self.WINDOW_WIDTH = WINDOW_WIDTH
         self.WINDOW_HEIGHT = WINDOW_HEIGHT
