@@ -43,18 +43,29 @@ class BallMoveSimulation:
             if keys[pygame.K_ESCAPE]:
                 pygame.quit()
                 sys.exit()
+            if keys[pygame.K_UP]:
+                self.ball.vy -= 0.1 + self.ball.ay
+            if keys[pygame.K_DOWN]:
+                self.ball.vy += 0.1
+            if keys[pygame.K_LEFT]:
+                self.ball.vx -= 0.1
+            if keys[pygame.K_RIGHT]:
+                self.ball.vx += 0.1
 
             self.simulation_window.fill((225, 225, 225))
             self.ball.update()
 
-            self.check_exit_condition()
+            if self.check_exit_condition():
+                pygame.quit()
+                sys.exit()
 
             self.ball.draw()
             pygame.display.update()
             self.clock.tick(self.clock_tick)
 
     def check_exit_condition(self):
-        if self.ball.y + self.ball.radius > self.WINDOW_HEIGHT - self.escape_height:
-                if abs(self.ball.vy) < 0.1 and self.ball.vy <= 0:
-                    pygame.quit()
-                    sys.exit()
+        if self.ball.y + self.ball.radius >= self.WINDOW_HEIGHT - self.escape_height and (abs(self.ball.vy) < 0.1 and self.ball.vy <= 0):
+            return True
+        else:
+            return False
+                    

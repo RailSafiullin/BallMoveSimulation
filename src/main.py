@@ -1,4 +1,4 @@
-from InitWindow import InitWindow
+from initWindow import InitWindow
 from Factory import Factory
 
 

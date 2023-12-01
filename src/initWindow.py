@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from BallMoveSimulation import BallMoveSimulation
+from ballMoveSimulation import BallMoveSimulation
 
 
 class InitWindow:
