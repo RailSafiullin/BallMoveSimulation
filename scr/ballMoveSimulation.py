@@ -1,5 +1,5 @@
 import pygame
-from ball import Ball
+from Ball import Ball
 import sys
 class BallMoveSimulation:
     def __init__(self, WINDOW_WIDTH=900, WINDOW_HEIGHT=600,

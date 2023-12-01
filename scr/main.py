@@ -1,4 +1,6 @@
-from initWindow import InitWindow
+from InitWindow import InitWindow
+from Factory import Factory
 
-window = InitWindow()
-window.run()
+
+app = Factory.create(InitWindow)
+app.run()

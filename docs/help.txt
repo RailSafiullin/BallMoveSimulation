@@ -1,0 +1,4 @@
+This is an application for simulating the movement of a ball
+Window and ball parameters are set via input fields
+
+To start the application, click the "Start" button
